@@ -108,7 +108,6 @@ The function takes the input of the user's investment assets(and amounts) and a 
         else:
             weight_score = avg * 9
         item["weighted_score"] = weight_score
-
     user_score = sorted(grouped_data, key=itemgetter('weighted_score'), reverse=True)
     if user_score[0]["rating"] == "Low-1":
         return "Your risk rating is Low, and your investment type is Capital Preservation"
