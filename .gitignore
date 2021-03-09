@@ -1,4 +1,5 @@
 venv
+venv/
 
 # misc
 __pycache__

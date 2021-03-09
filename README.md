@@ -87,11 +87,10 @@ Example of response:
 }
 `
 
-### Main function
+#### Function that return the user's weighted risk score
+The function takes the input of the user's investment assets(and amounts) and a model the investments types and calculates the weighted scores of each investment assets.
 
 `
-# Function that return the user's weighted risk score
-
 def getCategory(user, model):
     data_with_ratings = addRatings(user, model)
     grouped_data = groupRatings(data_with_ratings)
