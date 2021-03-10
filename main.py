@@ -4,8 +4,11 @@ import pandas as pd
 from itertools import zip_longest
 from collections import defaultdict
 from operator import itemgetter
+from coredata import users
+
 
 app = Flask(__name__)
+
 
 # Function to include the risk rating in the user object
 def addRatings(user, model):
@@ -57,12 +60,15 @@ def getCategory(user, model):
 
     user_score = sorted(grouped_data, key=itemgetter('weighted_score'), reverse=True)
     if user_score[0]["rating"] == "Low-1":
-        return "Your risk rating is Low, and your investment type is Capital Preservation"
+        return "low"
     elif user_score[0]["rating"] == "Low-2":
-        return "Your risk rating is Low, and your investment type is Income"
+        return "low-2"
     elif user_score[0]["rating"] == "Moderate":
-        return "Your risk rating is Moderate, and your investment type is Income & Growth"
+        return "moderate"
     elif user_score[0]["rating"] == "High":
-        return "Your risk rating is High, and your investment type is Growth"
+        return "high"
     else:
-        return "Your risk rating is Very High, and your investment type is Aggressive Growth"
+        return "very-high"
+
+def getUsers():
+    return users
