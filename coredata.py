@@ -17,7 +17,7 @@ users = [
     },
      {
         "asset": "Money Market Fund",
-        "amount": 900000
+        "amount": 700000
     },
      {
         "asset": "Euro-bond Fund",
@@ -45,6 +45,14 @@ users = [
     },
      {
         "asset": "Aggressive Growth Fund",
-        "amount": 500000
-    }
+        "amount": 1000000
+    },
+      {
+        "asset": "Discovery Fund",
+        "amount": 400000
+    },
+     {
+        "asset": "Foreign Stocks",
+        "amount": 820000
+    },
 ]
