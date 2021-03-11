@@ -1,7 +1,7 @@
 users = [
     {
         "asset": "Discovery Fund",
-        "amount": 150000
+        "amount": 250000
     },
        {
         "asset": "Fixed Income Fund",
@@ -29,7 +29,7 @@ users = [
     },
         {
         "asset": "Treasury Bills",
-        "amount": 600000
+        "amount": 700000
     },
     {
         "asset": "FGN Retail Savings",
@@ -45,7 +45,7 @@ users = [
     },
      {
         "asset": "FGN Corporate Bonds",
-        "amount": 700000
+        "amount": 600000
     },
      {
         "asset": "Aggressive Growth Fund",
@@ -62,5 +62,13 @@ users = [
      {
         "asset": "Euro-bond Fund",
         "amount": 700000
+    },
+      {
+        "asset": "Money Market Fund",
+        "amount": 400000
+    },
+     {
+        "asset": "FGN Retail Savings",
+        "amount": 300000
     },
 ]
