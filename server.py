@@ -1,9 +1,16 @@
 from flask import Flask, request, jsonify, make_response
 import main
 from data import inv_class
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+CORS(app)
+cors = CORS(app, resource={
+    r"/*":{
+        "origins":"*"
+    }
+})
 
 @app.route('/api/user_risk_profile', methods=['GET', 'POST'])
 def user_risk_profile():

@@ -9,7 +9,7 @@ users = [
     },
     {
         "asset": "Foreign Stocks",
-        "amount": 350000
+        "amount": 450000
     },
        {
         "asset": "Local Stocks",
@@ -17,10 +17,34 @@ users = [
     },
      {
         "asset": "Money Market Fund",
-        "amount": 100000
+        "amount": 800000
     },
      {
         "asset": "Euro-bond Fund",
         "amount": 400000
+    },
+        {
+        "asset": "Treasury Bills",
+        "amount": 1000000
+    },
+       {
+        "asset": "Easy Will",
+        "amount": 250000
+    },
+    {
+        "asset": "FGN Retail Savings",
+        "amount": 500000
+    },
+       {
+        "asset": "Education Trust",
+        "amount": 40000
+    },
+     {
+        "asset": "FGN Corporate Bonds",
+        "amount": 2000000
+    },
+     {
+        "asset": "Aggressive Growth Fund",
+        "amount": 1500000
     }
 ]

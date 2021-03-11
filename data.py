@@ -16,7 +16,8 @@ inv_class = [
   "type": "Income",
   "assets": [
       "Money Market Fund",
-      "FGN Retail Savings/FGN Corporate Bonds",
+      "FGN Retail Savings",
+      "FGN Corporate Bonds",
       "Easy Will",
       "Education Trust"
   ]
