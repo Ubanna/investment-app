@@ -4,12 +4,16 @@ users = [
         "amount": 100000
     },
        {
+        "asset": "Fixed Income Fund",
+        "amount": 700000
+    },
+       {
         "asset": "Ethical Fund",
         "amount": 200000
     },
     {
         "asset": "Foreign Stocks",
-        "amount": 450000
+        "amount": 300000
     },
        {
         "asset": "Local Stocks",
@@ -29,7 +33,7 @@ users = [
     },
        {
         "asset": "Easy Will",
-        "amount": 250000
+        "amount": 100000
     },
     {
         "asset": "FGN Retail Savings",
@@ -37,7 +41,7 @@ users = [
     },
        {
         "asset": "Education Trust",
-        "amount": 40000
+        "amount": 20000
     },
      {
         "asset": "FGN Corporate Bonds",
@@ -45,7 +49,7 @@ users = [
     },
      {
         "asset": "Aggressive Growth Fund",
-        "amount": 1000000
+        "amount": 800000
     },
       {
         "asset": "Discovery Fund",
@@ -53,6 +57,10 @@ users = [
     },
      {
         "asset": "Foreign Stocks",
-        "amount": 820000
+        "amount": 500000
+    },
+     {
+        "asset": "Euro-bond Fund",
+        "amount": 700000
     },
 ]
