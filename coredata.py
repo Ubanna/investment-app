@@ -5,7 +5,7 @@ users = [
     },
        {
         "asset": "Fixed Income Fund",
-        "amount": 700000
+        "amount": 500000
     },
        {
         "asset": "Ethical Fund",
@@ -29,7 +29,7 @@ users = [
     },
         {
         "asset": "Treasury Bills",
-        "amount": 1000000
+        "amount": 600000
     },
     {
         "asset": "FGN Retail Savings",
@@ -39,9 +39,13 @@ users = [
         "asset": "Education Trust",
         "amount": 20000
     },
+      {
+        "asset": "Euro-bond Fund",
+        "amount": 200000
+    },
      {
         "asset": "FGN Corporate Bonds",
-        "amount": 2000000
+        "amount": 700000
     },
      {
         "asset": "Aggressive Growth Fund",
