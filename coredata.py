@@ -1,7 +1,7 @@
 users = [
     {
         "asset": "Discovery Fund",
-        "amount": 100000
+        "amount": 150000
     },
        {
         "asset": "Fixed Income Fund",
@@ -17,7 +17,7 @@ users = [
     },
        {
         "asset": "Local Stocks",
-        "amount": 400000
+        "amount": 200000
     },
      {
         "asset": "Money Market Fund",
@@ -30,10 +30,6 @@ users = [
         {
         "asset": "Treasury Bills",
         "amount": 1000000
-    },
-       {
-        "asset": "Easy Will",
-        "amount": 100000
     },
     {
         "asset": "FGN Retail Savings",
