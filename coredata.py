@@ -13,11 +13,11 @@ users = [
     },
        {
         "asset": "Local Stocks",
-        "amount": 550000
+        "amount": 400000
     },
      {
         "asset": "Money Market Fund",
-        "amount": 800000
+        "amount": 900000
     },
      {
         "asset": "Euro-bond Fund",
@@ -45,6 +45,6 @@ users = [
     },
      {
         "asset": "Aggressive Growth Fund",
-        "amount": 1500000
+        "amount": 500000
     }
 ]
