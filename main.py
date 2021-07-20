@@ -83,6 +83,7 @@ def getUsers():
 
 def get_account_statement():
 
+    ## CHanged installation
     config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
     # config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
     rendered = render_template('statement.html')
