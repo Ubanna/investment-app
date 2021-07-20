@@ -17,16 +17,12 @@ import os, sys, subprocess, platform
 
 app = Flask(__name__)
 
-pdfkit_config = None
 
-if platform.system() == "Windows":
-        pdfkit_config = pdfkit.configuration(wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
-else:
-        os.environ['PATH'] += os.pathsep + os.path.dirname(sys.executable) 
-        WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')], 
-            stdout=subprocess.PIPE).communicate()[0].strip()
-        pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
+# https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb
 
+# //buildpacks
+# https://github.com/heroku/heroku-buildpack-apt
+# https://github.com/chap/wkhtmltopdf-heroku-18-buildpack
 
 # Function to include the risk rating in the user object
 def addRatings(user, model):
@@ -93,7 +89,15 @@ def getUsers():
 
 def get_account_statement():
 
-    ## CHanged installation
+    pdfkit_config = None
+
+    if platform.system() == "Windows":
+        pdfkit_config = pdfkit.configuration(wkhtmltopdf=os.environ.get('WKHTMLTOPDF_BINARY', 'C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe'))
+    else:
+        os.environ['PATH'] += os.pathsep + os.path.dirname(sys.executable) 
+        WKHTMLTOPDF_CMD = subprocess.Popen(['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')], 
+            stdout=subprocess.PIPE).communicate()[0].strip()
+        pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_CMD)
     # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
     # config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
     rendered = render_template('statement.html')
