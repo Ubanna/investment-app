@@ -7,6 +7,14 @@ from collections import defaultdict
 from operator import itemgetter
 from coredata import users
 
+import os
+from flask import g, render_template, make_response
+# import os, subprocess, platform
+import pdfkit
+import requests
+import shutil	
+import mechanize  
+
 
 app = Flask(__name__)
 
@@ -73,3 +81,18 @@ def getCategory(user, model):
 
 def getUsers():
     return users
+
+def get_account_statement():
+    try:
+        config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
+        rendered = render_template('statement.html')
+        pdf = pdfkit.from_string(rendered, configuration=config)
+            # pdf = pdfkit.from_string(rendered, False, configuration=pdfkit_config)
+
+        response = make_response(pdf)
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'inline; filename=arm_engage_statement.pdf'
+
+        return response
+    except Exception as error:
+        print('error', error)
