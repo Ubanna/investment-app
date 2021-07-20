@@ -83,9 +83,10 @@ def getUsers():
 
 def get_account_statement():
 
+    config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
     # config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
     rendered = render_template('statement.html')
-    pdf = pdfkit.from_string(rendered, False)
+    pdf = pdfkit.from_string(rendered, False, configuration=config)
             # pdf = pdfkit.from_string(rendered, False, configuration=pdfkit_config)
 
     response = make_response(pdf)
