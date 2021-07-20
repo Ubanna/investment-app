@@ -6,13 +6,11 @@ from itertools import zip_longest
 from collections import defaultdict
 from operator import itemgetter
 from coredata import users
+import os
 
 # import os, subprocess, platform
-import pdfkit
-import requests
-import shutil	
-import mechanize  
-import os, sys, subprocess, platform
+from flask import Flask, render_template, url_for
+from flask_weasyprint import HTML, render_pdf
 
 
 app = Flask(__name__)
@@ -102,14 +100,16 @@ def _get_pdfkit_config():
 
 def get_account_statement():
 
-    # config = pdfkit.configuration(wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
-    # config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-    rendered = render_template('statement.html')
-    pdf = pdfkit.from_string(rendered, False, configuration=_get_pdfkit_config())
-            # pdf = pdfkit.from_string(rendered, False, configuration=pdfkit_config)
+    # Make a PDF straight from HTML in a string.
+    html = render_template('statement.html')
+    return render_pdf(HTML(string=html))
 
-    response = make_response(pdf)
-    response.headers['Content-Type'] = 'application/pdf'
-    response.headers['Content-Disposition'] = 'inline; filename=arm_engage_statement.pdf'
+    # rendered = render_template('statement.html')
+    # pdf = pdfkit.from_string(rendered, False, configuration=_get_pdfkit_config())
+    #         # pdf = pdfkit.from_string(rendered, False, configuration=pdfkit_config)
 
-    return response
+    # response = make_response(pdf)
+    # response.headers['Content-Type'] = 'application/pdf'
+    # response.headers['Content-Disposition'] = 'inline; filename=arm_engage_statement.pdf'
+
+    # return response
