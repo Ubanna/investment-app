@@ -39,7 +39,7 @@ def temp_user():
     return response
 
 @app.route('/', methods=['GET'])
-def temp_user():
+def general_home():
     response = jsonify({
         'user': "Home page"
     })
