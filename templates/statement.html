@@ -388,47 +388,45 @@
                                     <tr>
                                         <td>
                                             <p><h2 style="color:#0da8a3 !important">Engage Statement Of Account</h2></p>
-                                            <p>Dear <b>{{statement_response.accountName}}!</b> <br /> You have just generated an account statement.</p>
+                                            <p>Dear <b>Test User!</b> <br /> You have just generated an account statement.</p>
                                             <p>kindly ignore this if you did not initiate the statement generation.</p>
 
                                         </td>
                                     </tr>
 									<hr style="color:#0da8a3">
-                                    {% for item in statement_response.statements %}
                                     <tr>
                                         <td>Transaction Date: </td>
-                                        <td>{{item.transactionDate}}</td>
+                                        <td>01/01/2029</td>
                                     </tr>
                                     <tr>
                                         <td>Transaction Type: </td>
-                                        <td>{{item.transactionType}}</td>
+                                        <td>Subscription</td>
                                     </tr>
 									<tr>
                                         <td>Amount: </td>
-                                        <td>{{item.amount}}</td>
+                                        <td>6500</td>
                                     </tr>
 									<tr>
                                         <td>Units: </td>
-                                        <td>{{item.units}}</td>
+                                        <td>9000</td>
                                     </tr>
 									<tr>
                                         <td>Unit Price: </td>
-                                        <td>{{item.unitPrice}}</td>
+                                        <td>2.67</td>
                                     </tr>
 									
 									<tr>
                                         <td>Fund Code: </td>
-                                        <td>{{item.fundCode}}</td>
+                                        <td>090</td>
                                     </tr>
 									<tr>
                                         <td>Total Units: </td>
-                                        <td>{{item.totalUnits}}</td>
+                                        <td>112</td>
                                     </tr>
 									<tr>
                                         <td>Balance: </td>
-                                        <td>{{item.balance}}</td>
+                                        <td>33,000</td>
                                     </tr>
-                                    {% endfor %}
 									<hr style="color:#0da8a3">
                                 </table>
                             </td>

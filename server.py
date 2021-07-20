@@ -41,7 +41,7 @@ def temp_user():
 @app.route('/api/fake_statement', methods=['GET'])
 def user_statement():
     response = main.get_account_statement()
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    # response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
 

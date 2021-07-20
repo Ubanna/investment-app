@@ -1,6 +1,6 @@
 
 # import necessary dependencies
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, make_response
 import pandas as pd
 from itertools import zip_longest
 from collections import defaultdict
@@ -8,7 +8,6 @@ from operator import itemgetter
 from coredata import users
 
 import os
-from flask import g, render_template, make_response
 # import os, subprocess, platform
 import pdfkit
 import requests
@@ -83,16 +82,14 @@ def getUsers():
     return users
 
 def get_account_statement():
-    try:
-        config = pdfkit.configuration(wkhtmltopdf='./bin/wkhtmltopdf')
-        rendered = render_template('statement.html')
-        pdf = pdfkit.from_string(rendered, configuration=config)
+
+    config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+    rendered = render_template('statement.html')
+    pdf = pdfkit.from_string(rendered, False, configuration=config)
             # pdf = pdfkit.from_string(rendered, False, configuration=pdfkit_config)
 
-        response = make_response(pdf)
-        response.headers['Content-Type'] = 'application/pdf'
-        response.headers['Content-Disposition'] = 'inline; filename=arm_engage_statement.pdf'
+    response = make_response(pdf)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'inline; filename=arm_engage_statement.pdf'
 
-        return response
-    except Exception as error:
-        print('error', error)
+    return response
