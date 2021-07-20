@@ -38,6 +38,15 @@ def temp_user():
 
     return response
 
+@app.route('/', methods=['GET'])
+def temp_user():
+    response = jsonify({
+        'user': "Home page"
+    })
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
 @app.route('/api/fake_statement', methods=['GET'])
 def user_statement():
     response = main.get_account_statement()
