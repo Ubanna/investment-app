@@ -27,5 +27,6 @@ webencodings==0.5.1
 Werkzeug==2.0.0
 wincertstore==0.2
 wkhtmltopdf==0.2
+wkhtmltopdf-pack-ng==0.12.3.0
 zope.event==4.5.0
 zope.interface==5.4.0
